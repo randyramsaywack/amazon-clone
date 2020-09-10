@@ -1,18 +1,19 @@
-import React from 'react'
-import "./Subtotal.css"
-import CurrencyFormat from 'react-currency-format'
+import React from "react";
+import "./Subtotal.css";
+import CurrencyFormat from "react-currency-format";
 
 function Subtotal() {
-    return (
-        <div className="subtotal">
-            <CurrencyFormat
+  return (
+    <div className="subtotal">
+      <CurrencyFormat
         renderText={(value) => (
           <div>
             <p>
               Subtotal (0 items): <strong>0</strong>
             </p>
             <small className="subtotal__gift">
-              <input type="checkbox" /> This order contains gift.</small>
+              <input type="checkbox" /> This order contains gift.
+            </small>
           </div>
         )}
         decimalScale={2}
@@ -22,8 +23,8 @@ function Subtotal() {
         prefix={"$"}
       />
       <button>Proceed to Checkout</button>
-        </div>
-    )
+    </div>
+  );
 }
 
-export default Subtotal
+export default Subtotal;

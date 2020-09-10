@@ -8,21 +8,20 @@ import Checkout from "./Checkout";
 function App() {
   return (
     // BEM naming convention
-  <Router>
-    <div className="app">
-
-      <Switch>
-        <Route path="/checkout">
-          <Header />
-          <Checkout/>
-        </Route>
-        <Route path="/">
-          <Header/>
-          <Home/>
-        </Route>
-      </Switch>
-    </div>
-  </Router>
+    <Router>
+      <div className="app">
+        <Switch>
+          <Route path="/checkout">
+            <Header />
+            <Checkout />
+          </Route>
+          <Route path="/">
+            <Header />
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
