@@ -30,6 +30,7 @@ function CheckoutProduct({ id, image, title, price, rating }) {
           numberOfStars={5}
           starDimension="18px"
         />
+        <br />
         <button onClick={removeFromBasket}>Remove from Basket</button>
       </div>
     </div>

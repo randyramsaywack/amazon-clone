@@ -16,7 +16,7 @@ function Home() {
             title="2020 Apple MacBook Pro (13-inch, 8GB RAM, 256GB SSD Storage, Magic
           Keyboard) - Space Gray"
             image="https://images-na.ssl-images-amazon.com/images/I/71HI3U9ZwZL._AC_SX679_.jpg"
-            price={(1, 299.99)}
+            price={1299.99}
             rating={4.5}
           />
           <Product
