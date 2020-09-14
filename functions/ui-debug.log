@@ -1,0 +1,12 @@
+Web / API server started at http://localhost:4000
+d [FetchError]: request to http://localhost:4400/emulators failed, reason: socket hang up
+    at ClientRequest.<anonymous> (/home/randyramsaywack/.cache/firebase/emulators/ui-v1.1.1/server.bundle.js:326:16724)
+    at ClientRequest.emit (events.js:315:20)
+    at Socket.socketOnEnd (_http_client.js:453:9)
+    at Socket.emit (events.js:327:22)
+    at endReadableNT (_stream_readable.js:1220:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21) {
+  type: 'system',
+  errno: 'ECONNRESET',
+  code: 'ECONNRESET'
+}

@@ -10,7 +10,7 @@ import { getBasketTotal } from "./reducer";
 import axios from "./axios";
 
 function Payment() {
-  const [{ basket, user }] = useStateValue();
+  const [{ basket, user, dispatch }] = useStateValue();
 
   const history = useHistory();
   const stripe = useStripe();
@@ -20,7 +20,7 @@ function Payment() {
   const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
-  const [clientSecret, setClientSecret] = useState(true);
+  const [clientSecret, setClientSecret] = useState(null);
 
   useEffect(() => {
     const getClientSecret = async () => {
@@ -33,6 +33,8 @@ function Payment() {
 
     getClientSecret();
   }, [basket]);
+
+  console.log("THE SECRET IS >>", clientSecret);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,6 +51,11 @@ function Payment() {
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
+
         history.replace("/orders");
       });
   };
