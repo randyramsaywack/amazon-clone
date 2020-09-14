@@ -2,6 +2,7 @@ import React from "react";
 import "./CheckoutProduct.css";
 import StarRatings from "react-star-ratings";
 import { useStateValue } from "./StateProvider";
+import CurrencyFormat from "react-currency-format";
 
 function CheckoutProduct({ id, image, title, price, rating }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -20,8 +21,16 @@ function CheckoutProduct({ id, image, title, price, rating }) {
       <div className="checkoutProduct__info">
         <p className="checkoutProduct__title">{title}</p>
         <p className="checkoutProduct__price">
-          <small>$</small>
-          <strong>{price}</strong>
+          <strong>
+            <CurrencyFormat
+              renderText={(value) => value}
+              decimalScale={2}
+              value={price}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={"$"}
+            />
+          </strong>
         </p>
         <StarRatings
           rating={rating}

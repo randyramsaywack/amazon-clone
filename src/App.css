@@ -1,0 +1,7 @@
+.product {
+  transition: all 0.2s ease-in-out;
+}
+.product:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 0.55rem gray);
+}
