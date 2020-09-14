@@ -4,7 +4,7 @@ import StarRatings from "react-star-ratings";
 import { useStateValue } from "./StateProvider";
 import CurrencyFormat from "react-currency-format";
 
-function CheckoutProduct({ id, image, title, price, rating }) {
+function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
   const [{ basket }, dispatch] = useStateValue();
 
   const removeFromBasket = (basket) => {
@@ -40,7 +40,9 @@ function CheckoutProduct({ id, image, title, price, rating }) {
           starDimension="18px"
         />
         <br />
-        <button onClick={removeFromBasket}>Remove from Basket</button>
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from Basket</button>
+        )}
       </div>
     </div>
   );
